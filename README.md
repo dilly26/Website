@@ -1,4 +1,4 @@
-# Dilip Kumar Mahato - personal website (launch build)
+# Dilip Kumar Mahato - Personal Website
 
 ## Publish on GitHub Pages
 1. Upload every file in this folder to the ROOT of the repository (no sub-folders needed):
