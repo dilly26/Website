@@ -1,4 +1,4 @@
-# Dilip Kumar Mahato - personal academic website
+# Dilip Kumar Mahato - Personal Website
 
 A static website. No build step and no installation: open `index.html` in a browser.
 
