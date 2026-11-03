@@ -1,7 +1,5 @@
 # Dilip Kumar Mahato - personal academic website
 
-A static website. No build step and no installation: open `index.html` in a browser.
-
 ## Files
 
 ```
