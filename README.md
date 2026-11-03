@@ -6,7 +6,7 @@
 portfolio-website/
 |-- index.html                           home page
 |-- tools.html                           landing page for the free CV Builder
-|-- Academic CV Design Engine.html       the CV Builder itself, Academic CV Studio (self-contained)
+|-- cv_build.html                        the CV Builder itself, Academic CV Studio (self-contained)
 |-- 404.html                            "page not found" page (self-contained)
 |-- css/style.css                        styling and animations (shared by index.html and tools.html)
 |-- js/script.js                         home page: animations, menu, links, contact form
