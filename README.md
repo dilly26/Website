@@ -1,5 +1,7 @@
 # Dilip Kumar Mahato - personal academic website
 
+A static website. No build step and no installation: open `index.html` in a browser.
+
 ## Files
 
 ```
@@ -22,3 +24,19 @@ portfolio-website/
 |-- robots.txt
 `-- README.md
 ```
+
+## Things to personalise (search the files for `EDIT:`)
+
+1. **Contact form (email)** - messages are emailed to you through Formspree, so your address never appears on the site. Create a free form at https://formspree.io, enter the email address you want to receive messages at, then paste the form ID (the part after `/f/` in the form link) into `FORMSPREE_ID` at the top of `js/script.js`. Formspree sends one confirmation email the first time; click it once. Until the ID is set, the form shows a short notice and sends nothing. WhatsApp is not used by the form.
+2. **Links** - fill in `LINKS` at the top of `js/script.js` (Scholar, ResearchGate, Medium, WhatsApp, phone). An icon shows only when its link is set, so there are no dead links.
+3. **Blog** - add entries to `BLOG_POSTS` in `js/script.js`. The Blog section stays hidden while the list is empty.
+4. **Colours** - all colours are CSS variables at the top of `css/style.css` (`:root`).
+5. **Hero photo** - replace `images/iitr-building.jpg` with another wide image (about 1600 px) to change the background.
+6. **Nepal photos** - replace a file in `images/nepal/` with another photo of the same name (about 1600-1900 px wide). Only use photos you have the right to publish.
+
+## Publishing
+
+Easiest: upload the flat files from the GitHub-ready package. With this editable source, upload the whole folder (keep css/, js/ and images/) to GitHub Pages, Netlify or Cloudflare Pages.
+
+The CV Builder (`cv-builder.html`) keeps visitors' data in their own browser; its sample CV is a neutral template.
+

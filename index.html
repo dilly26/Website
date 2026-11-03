@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dilip Kumar Mahato | Transportation Engineering</title>
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<title>Dilip Kumar Mahato</title>
 <!-- Favicon: the SVG adapts to light/dark itself; PNG/ICO pairs cover browsers that need a file per scheme -->
 <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="images/favicon-32.png" sizes="32x32" type="image/png" media="(prefers-color-scheme: light)">
@@ -14,8 +15,10 @@
 <link rel="manifest" href="site.webmanifest">
 <meta name="theme-color" content="#18324a" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0c1722" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://mahatodilip.com.np/">
+<meta property="og:url" content="https://mahatodilip.com.np/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Dilip Kumar Mahato | Transportation Engineering">
+<meta property="og:title" content="Dilip Kumar Mahato">
 <meta property="og:description" content="M.Tech student in Transportation Engineering at IIT Roorkee.">
 <meta name="description" content="Academic portfolio of Dilip Kumar Mahato, M.Tech student in Transportation Engineering at IIT Roorkee.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -141,7 +144,6 @@
           My work looks at how pedestrians and drivers read the street, how much they trust the information
           they get, and how that shapes the choices they make.
         </p>
-        <a href="#contact" class="btn btn-outline">Discuss a collaboration</a>
       </div>
       <div class="cards-2">
         <div class="focus-card hot">
@@ -191,7 +193,6 @@
         <div class="formats" aria-label="Export formats"><span>PDF</span><span>Word</span><span>LaTeX</span><span>Europass</span></div>
         <div class="btn-row">
           <a class="btn btn-primary" href="tools.html">Explore the CV Builder</a>
-          <a class="text-link" href="cv-builder.html">Open it now &rarr;</a>
         </div>
       </div>
 
@@ -233,7 +234,6 @@
       <!-- LinkedIn and the message form are fixed; the other icons are added by js/script.js (LINKS) only when a link is set -->
       <div class="connect-icons" id="connectIcons">
         <a class="connect-icon" href="https://www.linkedin.com/in/mahatodilip07/" target="_blank" rel="noopener" aria-label="LinkedIn"><span class="ic brand"><svg aria-hidden="true"><use href="#ico-linkedin"/></svg></span><em>LinkedIn</em></a>
-        <a class="connect-icon" href="#contact" aria-label="Send me a message"><span class="ic brand"><svg aria-hidden="true"><use href="#ico-gmail"/></svg></span><em>Email</em></a>
       </div>
     </div>
     <figure class="bloom rise">
@@ -250,24 +250,24 @@
     <div class="contact-card">
       <p class="eyebrow">Contact</p>
       <h2 class="section-title">Get in Touch</h2>
-      <p class="section-sub">For academic discussions, research ideas or collaborations, send a message below or find me on LinkedIn.</p>
+      <p class="section-sub">For academic discussions, research ideas or collaborations.</p>
+      <p class="form-note">Please fill in all fields so I can reply to you by email.</p>
       <form id="contactForm" novalidate>
         <input type="text" name="_gotcha" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div class="row-2">
-          <div><label for="name">Name</label><input id="name" name="name" type="text" placeholder="Your name" autocomplete="name" required></div>
-          <div><label for="email">Email</label><input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required></div>
+          <div><label for="name">Name</label><input id="name" name="name" type="text" placeholder="e.g. Your full name" autocomplete="name" required></div>
+          <div><label for="email">Email</label><input id="email" name="email" type="email" placeholder="e.g. username@gmail.com" autocomplete="email" required></div>
         </div>
         <div>
           <label for="topic">Topic</label>
           <select id="topic" name="topic">
             <option>General enquiry</option>
             <option>Research collaboration</option>
-            <option>Internship / job opportunity</option>
             <option>CV Builder feedback</option>
             <option>Other</option>
           </select>
         </div>
-        <div><label for="message">Message</label><textarea id="message" name="message" placeholder="Write your message here..." required></textarea></div>
+        <div><label for="message">Message</label><textarea id="message" name="message" placeholder="e.g. Hello Dilip, I would like to discuss a research idea. Could we connect this week?" required></textarea><small class="hint">Plain text only. Emoji are removed.</small></div>
         <button type="submit" class="btn btn-primary" id="sendBtn">Send message</button>
         <div id="formStatus" role="status" aria-live="polite"></div>
       </form>
