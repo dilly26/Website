@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<style>.tile1{stop-color:#eef4f4}.tile2{stop-color:#ffffff}.ring{stroke:#ffffff}.dA{stop-color:#18324a}.dB{stop-color:#146c70}.l1{stop-color:#ffffff}.l2{stop-color:#bfeaf2}.edge{stroke:#0b1c2b}.split{stroke:#18324a}.mh{stroke:#7fe0d2}.glow{opacity:0}@media (prefers-color-scheme:dark){.tile1{stop-color:#16283a}.tile2{stop-color:#0c1722}.ring{stroke:#0c1722}.dA{stop-color:#e9fbff}.dB{stop-color:#8fdcf0}.l1{stop-color:#10283d}.l2{stop-color:#18324a}.edge{stroke:#10283d}.split{stroke:#8fdcf0}.mh{stroke:#146c70}.glow{opacity:.55}}</style>
+<defs>
+<linearGradient id="b" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7fd3f2"/><stop offset="1" stop-color="#2e63a8"/></linearGradient>
+<linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#b4e04a"/><stop offset="1" stop-color="#2f7a2a"/></linearGradient>
+<linearGradient id="y" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffd23c"/><stop offset="1" stop-color="#f08a1c"/></linearGradient>
+<linearGradient id="m" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff2ad0"/><stop offset="1" stop-color="#7a0d86"/></linearGradient>
+<linearGradient id="hl" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".85"/><stop offset="1" stop-color="#fff" stop-opacity=".15"/></linearGradient>
+<linearGradient id="tile" x1="0" y1="0" x2="0" y2="1"><stop class="tile1" offset="0"/><stop class="tile2" offset="1"/></linearGradient>
+<linearGradient id="disc" x1="0" y1="0" x2="1" y2="1"><stop class="dA" offset="0"/><stop class="dB" offset="1"/></linearGradient>
+<linearGradient id="let" x1="0" y1="0" x2="1" y2="1"><stop class="l1" offset="0"/><stop class="l2" offset="1"/></linearGradient>
+<radialGradient id="glow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#5fd0ff" stop-opacity=".55"/><stop offset="1" stop-color="#5fd0ff" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="200" height="200" rx="44" fill="url(#tile)"/>
+<circle class="glow" cx="100" cy="100" r="96" fill="url(#glow)"/>
+<g transform="rotate(0 100 100)"><path d="M 146 28 C 126 14 98 14 78 28 C 60 41 49 57 48 77 C 47 94 57 104 68 101 C 80 98 82 85 87 73 C 96 50 118 36 146 28 Z" fill="url(#b)"/><path d="M 134 31 C 114 24 92 28 76 41 C 62 53 55 66 56 82" fill="none" stroke="url(#hl)" stroke-width="5" stroke-linecap="round"/></g>
+<g transform="rotate(90 100 100)"><path d="M 146 28 C 126 14 98 14 78 28 C 60 41 49 57 48 77 C 47 94 57 104 68 101 C 80 98 82 85 87 73 C 96 50 118 36 146 28 Z" fill="url(#g)"/><path d="M 134 31 C 114 24 92 28 76 41 C 62 53 55 66 56 82" fill="none" stroke="url(#hl)" stroke-width="5" stroke-linecap="round"/></g>
+<g transform="rotate(180 100 100)"><path d="M 146 28 C 126 14 98 14 78 28 C 60 41 49 57 48 77 C 47 94 57 104 68 101 C 80 98 82 85 87 73 C 96 50 118 36 146 28 Z" fill="url(#y)"/><path d="M 134 31 C 114 24 92 28 76 41 C 62 53 55 66 56 82" fill="none" stroke="url(#hl)" stroke-width="5" stroke-linecap="round"/></g>
+<g transform="rotate(270 100 100)"><path d="M 146 28 C 126 14 98 14 78 28 C 60 41 49 57 48 77 C 47 94 57 104 68 101 C 80 98 82 85 87 73 C 96 50 118 36 146 28 Z" fill="url(#m)"/><path d="M 134 31 C 114 24 92 28 76 41 C 62 53 55 66 56 82" fill="none" stroke="url(#hl)" stroke-width="5" stroke-linecap="round"/></g>
+<circle class="ring" cx="100" cy="100" r="55" fill="none" stroke-width="6"/>
+<circle cx="100" cy="100" r="52" fill="url(#disc)"/>
+<g transform="translate(100 101) scale(0.780) translate(-58 -56)"><path class="mh" d="M 51 71 L 51 52 L 60.5 63 L 70 52 L 70 71" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" opacity=".5"/><g fill="url(#let)" class="edge" stroke-width="2.2" stroke-linejoin="round"><path d="M 18 32 L 34 14 L 46 20 C 80 14 98 36 94 58 C 90 82 68 94 46 90 L 34 98 L 18 84 Z M 44 34 C 66 30 79 42 78 58 C 77 72 64 80 44 76 Z" fill-rule="evenodd"/><path d="M 18 32 C 8 28 9 14 22 12 C 18 18 20 24 27 25" stroke-width="2.2"/></g><path class="split" d="M 31 30 L 31 84" fill="none" stroke-width="2.2" stroke-linecap="round"/></g>
+</svg>
