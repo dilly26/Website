@@ -1038,7 +1038,16 @@ function(t){t.__bidiEngine__=t.prototype.__bidiEngine__=function(t){var r,n,i,a,
 (()=>{
 const clr=h=>/^#[0-9a-f]{6}$/i.test(h)?h:'#183b65';
 const rgb=h=>[1,3,5].map(i=>parseInt(h.slice(i,i+2),16));
-function exportPdf(){
+function iconPng(k){
+  let h=cvIcon(k);if(!h)return Promise.resolve(null);
+  const tc=(getComputedStyle(document.body).getPropertyValue('--theme-strong')||'').trim()||'#0b654f';
+  h=h.replace(/var\(--theme-strong,#0b654f\)/g,tc).replace('<svg class="cv-ic"','<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128"');
+  return new Promise(res=>{const img=new Image();
+    img.onload=()=>{try{const c=document.createElement('canvas');c.width=c.height=128;c.getContext('2d').drawImage(img,0,0,128,128);res(c.toDataURL('image/png'))}catch(e){res(null)}};
+    img.onerror=()=>res(null);
+    img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(h)});
+}
+async function exportPdf(){
   const {jsPDF}=window.jspdf,s=data.style,p=data.personal,pp=pageSpec(),sch=s.template==='scholarship';
   const doc=new jsPDF({unit:'mm',format:[pp.w,pp.h]});
   doc.setProperties({title:downloadStem(),author:p.name||''});doc.setLanguage('en-US');
@@ -1059,13 +1068,19 @@ function exportPdf(){
   }
   // ----- header (contact rows measured first so the scholarship band can be drawn behind the text)
   const pad=sch?5:0,xi=m+pad,Wi=W-2*pad,nameSz=Number(s.nameSize)||24;
+  const mode=s.contactIcons||'brand',useIc=mode!=='none',IC=3.4,IG=1.3,GAP=4.5;
   const items=[];
-  if(p.email)items.push([p.email,emailLink(p.email)]);
-  [p.phone,p.location].forEach(v=>v&&items.push([v,'']));
-  personalLinks().forEach(l=>items.push([profileText(l),l.url]));
-  set(9.5);const sep='  |  ',sw=doc.getTextWidth(sep),rows=[[]];let rw=0;
-  items.forEach(([a,u])=>{a=t(a);const w=doc.getTextWidth(a);let add=(rows.at(-1).length?sw:0)+w;
-    if(rows.at(-1).length&&rw+add>Wi){rows.push([]);rw=0;add=w}rw+=add;rows.at(-1).push([a,u,w])});
+  if(p.email)items.push(['email',p.email,emailLink(p.email)]);
+  if(p.phone)items.push(['phone',p.phone,'']);
+  if(p.location)items.push(['location',p.location,'']);
+  if(s.template==='europass'&&p.nationality)items.push(['flag',(useIc?'':'Nationality: ')+p.nationality,'']);
+  if(s.template==='europass'&&p.dob)items.push(['cake',(useIc?'':'DOB: ')+p.dob,'']);
+  personalLinks().forEach(l=>items.push([l.key,profileText(l),l.url]));
+  const pics={};
+  if(useIc)for(const it of items)if(!(it[0] in pics))pics[it[0]]=await iconPng(it[0]);
+  set(9.5);const sep='  |  ',sw=useIc?GAP:doc.getTextWidth(sep),rows=[[]];let rw=0;
+  items.forEach(([k,a,u])=>{a=t(a);const ic=useIc&&pics[k]?IC+IG:0,w=ic+doc.getTextWidth(a);let add=(rows.at(-1).length?sw:0)+w;
+    if(rows.at(-1).length&&rw+add>Wi){rows.push([]);rw=0;add=w}rw+=add;rows.at(-1).push([a,u,w,k,ic])});
   const nr=rows.filter(r=>r.length).length;
   if(sch){
     const bandH=2*pad+nameSz*PT*lh+(p.headline?10.5*PT*lh:0)+nr*4.4+1,[r,g,b]=rgb(accent);
@@ -1077,8 +1092,12 @@ function exportPdf(){
   if(p.headline)para(p.headline,{sz:10.5,al,x:xi,w:Wi});
   rows.forEach(r=>{if(!r.length)return;room(5);y+=4.4;
     let x=al==='left'?xi:m+(W-(r.reduce((n,i)=>n+i[2],0)+sw*(r.length-1)))/2;
-    r.forEach(([a,u,w],i)=>{set(9.5);if(i){doc.text(sep,x,y);x+=sw}
-      if(u){doc.setTextColor(accent);doc.text(a,x,y);doc.link(x,y-3.4,w,4.4,{url:u})}else doc.text(a,x,y);x+=w})});
+    r.forEach(([a,u,w,k,ic],i)=>{set(9.5);
+      if(i){if(useIc)x+=sw;else{doc.text(sep,x,y);x+=sw}}
+      const x0=x;
+      if(ic){doc.addImage(pics[k],'PNG',x,y-IC+.5,IC,IC,'ic_'+k);x+=ic}
+      if(u){doc.setTextColor(accent);doc.text(a,x,y);doc.link(x0,y-3.4,w,4.4,{url:u})}else doc.text(a,x,y);
+      x+=w-ic})});
   y+=sch?pad+4:3;
   // ----- sections
   outline().forEach(sec=>{
@@ -1115,7 +1134,7 @@ document.addEventListener('click',e=>{
   e.preventDefault();e.stopImmediatePropagation();
   if(b.dataset.quickExport==='europass'){data.style.template='europass';update()}
   $('#export-dropdown').classList.remove('open');
-  try{exportPdf();toast('PDF downloaded.')}catch(err){console.error(err);toast('PDF export failed.')}
+  exportPdf().then(()=>toast('PDF downloaded.')).catch(err=>{console.error(err);toast('PDF export failed.')})
 },true);
 })();
 </script>
