@@ -235,7 +235,7 @@ body[data-ui-theme="gold"]{--navy:#282c39;--navy2:#474b5b;--teal:#976e28;--mint:
 .ck-list li.off button{color:#9aa5b1;text-decoration:line-through}.ck-list li.off i{background:#f3d7d7;border-color:#d98b8b;color:#b23b3b}.ck-list li.ok i{background:var(--theme-strong,#1f8a6f);border-color:var(--theme-strong,#1f8a6f)}.ck-list li.ok button{color:var(--theme-strong,#1d6b58)}.ck-next{background:var(--theme-strong,#5b48b5)}.ck-next:hover{filter:brightness(.92);background:var(--theme-strong,#4a39a0)}.ck-next:focus{outline:none}.ck-next:focus-visible{outline:2px solid var(--theme-border,#999);outline-offset:2px}.side-foot{background:var(--theme-faint,#f3f0ff);border-color:var(--theme-border,#e6e2f6)}.ck-head span{color:var(--theme-strong,#5b48b5)}
 </style>
 <style id="quiet-ui">
-.export-eyebrow,.export-copy small,.format-text small,.preview-hint,.footer,.side-top p,.theme-caption small,.form-intro,.editor-tip,.editor-head p,.field-note,.profile-feedback,.inline-guide{display:none!important}
+.export-eyebrow,.export-copy small,.format-text small,.preview-hint,.side-top p,.theme-caption small,.form-intro,.editor-tip,.editor-head p,.field-note,.profile-feedback,.inline-guide{display:none!important}
 /* Scholarship layout: tinted header, dates in a left column, accent section rules */
 .cv-sheet.scholarship .cv-header{background:color-mix(in srgb,var(--cv-accent) 9%,#fff);border:0;border-left:4pt solid var(--cv-accent);padding:12pt 14pt;text-align:left;margin-bottom:4pt}
 .cv-sheet.scholarship .cv-name{color:var(--cv-accent)}
@@ -248,6 +248,7 @@ body[data-ui-theme="gold"]{--navy:#282c39;--navy2:#474b5b;--teal:#976e28;--mint:
 .cv-sheet.scholarship .cv-entry-head strong{grid-column:2;grid-row:1}
 .cv-sheet.scholarship .cv-entry-sub{grid-column:2;grid-row:2}
 .cv-sheet.scholarship .cv-entry ul{grid-column:2;grid-row:3}
+.footer a{color:var(--theme-strong,#0b654f);font-weight:700;text-decoration:none;overflow-wrap:anywhere}.footer a:hover{text-decoration:underline}
 </style>
 </head>
 <body>
@@ -289,7 +290,7 @@ body[data-ui-theme="gold"]{--navy:#282c39;--navy2:#474b5b;--teal:#976e28;--mint:
 <section class="panel editor"><div class="editor-head"><div class="kicker" id="editor-kicker">01 / PERSONAL DETAILS</div><h2 id="editor-title">Personal information</h2><p id="editor-subtitle">Start with your name and the details committees need to contact you.</p></div><div class="form-body" id="form-body"></div></section>
 <aside class="panel preview-col"><div class="preview-toolbar"><div><h3><svg class="i"><use href="#ic-eye"/></svg> Live CV preview</h3><span class="preview-meta" id="preview-meta">A4 · Times New Roman</span></div><div class="preview-actions"><label class="fit-control" for="preview-zoom"><span>View</span><select id="preview-zoom" aria-label="Preview size"><option value="auto" selected>Auto fit</option><option value="width">Fit width</option><option value="100">100%</option></select></label><span class="mini-switch" id="page-indicator">A4</span><button type="button" class="button small mint" id="preview-print"><svg class="i"><use href="#ic-download"/></svg> PDF</button></div></div><div class="template-picker" id="template-picker"><button type="button" class="template-btn selected" data-template="academic"><span class="template-thumb"></span>Classic</button><button type="button" class="template-btn" data-template="modern"><span class="template-thumb"></span>Modern</button><button type="button" class="template-btn" data-template="scholarship"><span class="template-thumb"></span>Timeline</button><button type="button" class="template-btn" data-template="europass"><span class="template-thumb"></span>Europass-style</button></div><div class="preview-stage" id="preview-stage"><div class="page-frame" id="page-frame"><article class="cv-sheet academic" id="cv-preview" aria-label="Preview of your academic CV"></article></div><p class="preview-hint">Shown smaller to fit your screen. Downloads keep the full page size.</p></div></aside>
 </main>
-<footer class="footer"><p>Your CV stays in this browser. Use <b>Save project</b> to keep a backup before you clear your browser data.</p></footer>
+<footer class="footer"><p>To Know More: <a id="footer-mail" href="#">info</a></p></footer>
 <div id="print-area" aria-hidden="true"></div><div class="toast" role="status" aria-live="polite" id="toast"></div>
 <script>
 'use strict';
@@ -1138,5 +1139,6 @@ document.addEventListener('click',e=>{
 },true);
 })();
 </script>
+<script>(function(){var a=document.getElementById('footer-mail');if(!a)return;var m=['info','mahatodilip.com.np'].join('@');a.href='mailto:'+m;a.textContent=m})();</script>
 </body>
 </html>

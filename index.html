@@ -462,6 +462,12 @@ blockquote cite { display: block; font-style: normal; font-size: .85rem; letter-
 .mp-row{display:flex;justify-content:space-between;gap:6px;font-size:.54rem;color:var(--navy)}
 .mp-row i{font-style:normal;color:#5d7172;white-space:nowrap}
 @media(max-width:560px){.mf span{font-size:.5rem}.mp-t,.mp-row{font-size:.47rem}.mp-name{font-size:.8rem}.mp-sub,.mp-h{font-size:.44rem}}
+/* ui-polish end */
+/* Email links: same look as the rest of the page */
+.connect-mail{margin-top:22px;color:var(--muted);font-size:.95rem}
+.connect-mail a,.tool-mail a{font-weight:600;overflow-wrap:anywhere}
+.tool-mail{margin:18px 0 0;color:var(--muted);font-size:.92rem}
+footer .foot-mail{font-size:.84rem;opacity:.92}
 </style>
 </head>
 <body>
@@ -477,6 +483,7 @@ blockquote cite { display: block; font-style: normal; font-size: .85rem; letter-
     <path fill="#c62828" d="M3 12.298V16.2l10 7.5V11.2L9.876 8.859C9.132 8.301 8.228 8 7.298 8 4.924 8 3 9.924 3 12.298z"/>
     <path fill="#fbc02d" d="M45 12.298V16.2l-10 7.5V11.2l3.124-2.341C38.868 8.301 39.772 8 40.702 8 43.076 8 45 9.924 45 12.298z"/>
   </symbol>
+  <symbol id="ico-mail" viewBox="0 0 24 24"><defs><linearGradient id="mailg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#27b5a5"/><stop offset="1" stop-color="#146c70"/></linearGradient></defs><rect width="24" height="24" rx="5.5" fill="url(#mailg)"/><rect x="4" y="6.4" width="16" height="11.2" rx="2.1" fill="#fff"/><path d="M5 8.1l7 5.4 7-5.4" fill="none" stroke="#146c70" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="ico-phone" viewBox="0 0 24 24">
     <path fill="#1976d2" d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24 11.36 11.36 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.02l-2.2 2.2z"/>
   </symbol>
@@ -513,7 +520,7 @@ blockquote cite { display: block; font-style: normal; font-size: .85rem; letter-
       <div>
         <p class="hello"><span class="hey">Hey!</span> <span class="wave" aria-hidden="true">👋</span></p>
         <h1 id="heroName" aria-label="I'm Dilip Kumar Mahato">I'm Dilip Kumar Mahato</h1>
-        <h2 class="role">M.Tech Student · Transportation Engineering</h2>
+        <h2 class="role">M.Tech in Transportation Engineering</h2>
         <p class="focus-line">Focused on <span id="typed" class="typed"></span><span class="caret" aria-hidden="true"></span></p>
         <div class="btn-row">
           <a href="#contact" class="btn btn-primary">Connect me</a>
@@ -537,8 +544,8 @@ blockquote cite { display: block; font-style: normal; font-size: .85rem; letter-
 
       <div class="about">
         <h2>About Me</h2>
-        <p class="about-lead">Making streets work better for everyone who walks, drives and rides.</p>
-        <p>I'm a Transportation Engineering M.Tech student at IIT Roorkee. I'm fascinated by how people read the road and make decisions on it, and I enjoy turning those insights into practical, people-first ideas.</p>
+        <p class="about-lead">Understanding road-user behavior for safer streets.</p>
+        <p>I am an M.Tech student from the Transportation Engineering Group at IIT Roorkee. My research explores road users' perceptions, attitudes, and behavior, with a particular interest in how human interactions and decision-making influence road safety across different traffic scenarios.</p>
         <figure class="campus" role="img" aria-label="James Thomason Building, IIT Roorkee"></figure>
       </div>
     </div>
@@ -565,10 +572,9 @@ blockquote cite { display: block; font-style: normal; font-size: .85rem; letter-
     <div class="focus-grid">
       <div class="focus-text">
         <p class="eyebrow">Research interests</p>
-        <h2 class="big">How people see the road, and how they decide</h2>
+        <h2 class="big">Why do we cross, stop or go?</h2>
         <p>
-          My work looks at how pedestrians and drivers read the street, how much they trust the information
-          they get, and how that shapes the choices they make.
+          My research focuses on what people notice, what they trust, and how these shape their decisions on the road.
         </p>
       </div>
       <div class="cards-2">
@@ -613,13 +619,14 @@ blockquote cite { display: block; font-style: normal; font-size: .85rem; letter-
   <div class="container reveal">
     <div class="tool-grid">
       <div class="tool-copy">
-        <p class="eyebrow">One place for internships, admissions, scholarships &amp; beyond</p>
+        <p class="eyebrow">Free · Private · No sign-up required</p>
         <h2 class="section-title">Academic CV Builder</h2>
-        <p class="tool-lead">Build once. Customize it your way, in many ways.</p>
-        <div class="formats" aria-label="Export formats"><span>PDF</span><span>Word</span><span>LaTeX</span><span>Europass</span></div>
+        <p class="tool-lead">Create a polished CV for internships, admissions, scholarships and research positions. Enter your details once, choose a layout, and download it as a PDF, Word or LaTeX file.</p>
+        <div class="formats" aria-label="Export formats"><span>PDF</span><span>Word</span><span>LaTeX</span><span>Europass-style</span></div>
         <div class="btn-row">
           <a class="btn btn-primary" href="tools.html">Explore the CV Builder</a>
         </div>
+        <p class="tool-mail">To Know More: <a href="#contact" data-mail="info" data-mail-text data-subject="To know more about the CV Builder">info</a></p>
       </div>
 
       <a class="tool-visual" href="tools.html" aria-label="Explore the CV Builder">
@@ -628,7 +635,7 @@ blockquote cite { display: block; font-style: normal; font-size: .85rem; letter-
           <div class="mock-body">
             <div class="mock-form">
               <div class="mf"><small>Full name</small><span>Your Full Name</span></div>
-              <div class="mf"><small>Headline</small><span>Master's Student · Research Area</span></div>
+              <div class="mf"><small>Headline</small><span>Research Area · University</span></div>
               <div class="mf"><small>Email</small><span>name@email.com</span></div>
               <div class="mf"><small>Education</small><span>Degree · University</span></div>
               <div class="mf"><small>Research</small><span>Project title and methods</span></div>
@@ -637,7 +644,7 @@ blockquote cite { display: block; font-style: normal; font-size: .85rem; letter-
             </div>
             <div class="mock-page">
               <div class="mp-name">Your Full Name</div>
-              <div class="mp-sub">Master's Student · Research Area · City, Country</div>
+              <div class="mp-sub">Research Area · University · City, Country</div>
               <div class="mp-h">Research summary</div>
               <p class="mp-t">Researcher interested in your topic, with experience in data analysis and modelling.</p>
               <div class="mp-h">Education</div>
@@ -675,7 +682,9 @@ blockquote cite { display: block; font-style: normal; font-size: .85rem; letter-
       <!-- LinkedIn and the message form are fixed; the other icons are added by js/script.js (LINKS) only when a link is set -->
       <div class="connect-icons" id="connectIcons">
         <a class="connect-icon" href="https://www.linkedin.com/in/mahatodilip07/" target="_blank" rel="noopener" aria-label="LinkedIn"><span class="ic brand"><svg aria-hidden="true"><use href="#ico-linkedin"/></svg></span><em>LinkedIn</em></a>
+        <a class="connect-icon" href="#contact" data-mail="contact" data-subject="Hello Dilip" aria-label="Email"><span class="ic brand"><svg aria-hidden="true"><use href="#ico-mail"/></svg></span><em>Email</em></a>
       </div>
+      <p class="connect-mail">Or write to <a href="#contact" data-mail="contact" data-mail-text data-subject="Hello Dilip">contact</a></p>
     </div>
     <figure class="bloom rise">
       <span class="petal p1" aria-hidden="true"></span><span class="petal p2" aria-hidden="true"></span><span class="petal p3" aria-hidden="true"></span><span class="petal p4" aria-hidden="true"></span><span class="petal p5" aria-hidden="true"></span>
@@ -720,6 +729,7 @@ blockquote cite { display: block; font-style: normal; font-size: .85rem; letter-
 <footer>
   <div class="container">
     <p>© <span id="year"></span> Dilip Kumar Mahato</p>
+    <p class="foot-mail">To Know More: <a href="#tools" data-mail="info" data-mail-text data-subject="To know more">info</a></p>
   </div>
 </footer>
 
@@ -742,16 +752,18 @@ const LINKS = {
    { title: "My first post", date: "12 Jan 2027", summary: "One or two lines.", url: "https://..." } */
 const BLOG_POSTS = [];
 
-/* ============ EDIT: CONTACT FORM -> YOUR EMAIL ============
-   Messages from the form are emailed to you through Formspree (free). Your email address is never shown on the site.
-   1. Create a free account at https://formspree.io and click "New form".
-   2. Enter the email address where you want to receive messages (you set it there, not in this file).
-   3. Copy the form ID from the form's link (https://formspree.io/f/xyzabcde  ->  xyzabcde) and paste it below.
-   4. Formspree sends you a confirmation email the first time. Click it once.
-   Until an ID is set, the form just shows a short notice and does not send anything.
-   Planned inboxes (not active yet): info@mahatodilip.com.np, contact@mahatodilip.com.np, admin@mahatodilip.com.np
-   When one is ready, use it as the receiving address in Formspree. Messages are only ever sent by email. */
-const FORMSPREE_ID = "YOUR_FORM_ID";
+/* ============ CONTACT: EMAIL ADDRESSES + FORM DELIVERY ============
+   The two addresses are assembled here, so they are not written as plain text in the page (this stops most spam programs).
+   Every element marked data-mail="contact" or data-mail="info" gets its full address and a mailto link automatically.
+   Form messages are delivered to contact@ by FormSubmit (formsubmit.co, free, no account needed).
+   First time only: after the first message is sent, FormSubmit emails an activation link to contact@. Click it once and the form is live. */
+const MAIL = { contact: ["contact", "mahatodilip.com.np"], info: ["info", "mahatodilip.com.np"] };
+const mailAddr = k => MAIL[k].join("@");
+document.querySelectorAll("[data-mail]").forEach(el => {
+  const addr = mailAddr(el.dataset.mail);
+  if (el.tagName === "A") el.href = "mailto:" + addr + (el.dataset.subject ? "?subject=" + encodeURIComponent(el.dataset.subject) : "");
+  if (el.hasAttribute("data-mail-text")) el.textContent = addr;
+});
 
 /* ---------- Hero: letter-by-letter name ---------- */
 (function () {
@@ -917,9 +929,16 @@ function setStatus(msg, kind, withLinkedIn) {
   if (withLinkedIn) {
     const a = document.createElement("a");
     a.href = "https://www.linkedin.com/in/mahatodilip07/"; a.target = "_blank"; a.rel = "noopener"; a.textContent = "LinkedIn";
-    statusEl.append(" ", a, ".");
+    const m = document.createElement("a");
+    m.href = "mailto:" + mailAddr("contact"); m.textContent = mailAddr("contact");
+    statusEl.append(" ", a, " or ", m, ".");
   }
 }
+
+/* Basic protection: hidden trap field, too-fast sends, one message per minute, link limit, disposable email addresses blocked */
+const FORM_OPENED = Date.now();
+const DISPOSABLE = ["mailinator.com","guerrillamail.com","guerrillamail.net","sharklasers.com","grr.la","10minutemail.com","10minutemail.net","tempmail.com","temp-mail.org","temp-mail.io","tempmailo.com","tempail.com","yopmail.com","yopmail.net","trashmail.com","trashmail.net","getnada.com","nada.email","dispostable.com","maildrop.cc","throwawaymail.com","fakeinbox.com","mintemail.com","mohmal.com","emailondeck.com","mailnesia.com","spamgourmet.com","burnermail.io","moakt.com","mytemp.email","tmpmail.org","tmpmail.net","discard.email","fakemail.net","inboxkitten.com","mailcatch.com","33mail.com","anonaddy.me","jetable.org","dropmail.me","emailfake.com","crazymailing.com","harakirimail.com","spambox.us","trbvm.com","owlymail.com"];
+const isDisposable = d => DISPOSABLE.some(x => d === x || d.endsWith("." + x));
 
 form.addEventListener("submit", async e => {
   e.preventDefault();
@@ -927,21 +946,45 @@ form.addEventListener("submit", async e => {
   if (data.get("_gotcha")) return;
   const name = (data.get("name") || "").trim();
   const email = (data.get("email") || "").trim();
+  const topic = data.get("topic") || "General enquiry";
   const message = (data.get("message") || "").trim();
-  if (!name || !message || !/^\S+@\S+\.\S+$/.test(email)) {
+  if (!name || !message || !/^[^\s@<>]+@[^\s@<>]+\.[A-Za-z]{2,}$/.test(email)) {
     setStatus("Please enter your name, a valid email and a message.", false);
     return;
   }
-  if (!FORMSPREE_ID || FORMSPREE_ID === "YOUR_FORM_ID") {
-    // Email service not connected yet: send nothing, keep the visitor's text so it isn't lost
-    setStatus("Thank you for writing! The email link for this form is still being set up, so your message has not been delivered yet. For now, please reach me on", "info", true);
+  if (isDisposable(email.split("@")[1].toLowerCase())) {
+    setStatus("Please use your own permanent email address. Temporary or disposable addresses are not accepted.", false);
     return;
   }
+  if (message.length < 15) { setStatus("Please write a little more so I can understand your message.", false); return; }
+  if (message.length > 3000) { setStatus("Your message is too long. Please keep it under 3000 characters.", false); return; }
+  if ((message.match(/https?:\/\/|www\./gi) || []).length > 2) { setStatus("Please include no more than two links in your message.", false); return; }
+  if (Date.now() - FORM_OPENED < 4000) { setStatus("Please check your message once more, then press Send message.", "info"); return; }
+  let last = 0; try { last = Number(localStorage.getItem("lastMessageAt") || 0); } catch (err) {}
+  if (Date.now() - last < 60000) { setStatus("Your last message was sent a moment ago. Please wait a minute before sending another.", "info"); return; }
+
+  const payload = new FormData();
+  payload.append("name", name);
+  payload.append("email", email);
+  payload.append("topic", topic);
+  payload.append("message", message);
+  payload.append("_subject", "Website message: " + topic + " (" + name + ")");
+  payload.append("_template", "table");
+  payload.append("_captcha", "false");
+  payload.append("_honey", "");
+  if (topic === "CV Builder feedback") payload.append("_cc", mailAddr("info"));
+
   sendBtn.disabled = true; sendBtn.textContent = "Sending...";
   try {
-    const res = await fetch("https://formspree.io/f/" + FORMSPREE_ID, { method: "POST", body: data, headers: { Accept: "application/json" } });
-    if (res.ok) { setStatus("Thank you! Your message has been sent. I will get back to you soon.", true); form.reset(); }
-    else { setStatus("Something went wrong, so your message was not sent. Please try again, or reach me on", false, true); }
+    const res = await fetch("https://formsubmit.co/ajax/" + mailAddr("contact"), { method: "POST", body: payload, headers: { Accept: "application/json" } });
+    const out = await res.json().catch(() => ({}));
+    if (res.ok && String(out.success) === "true") {
+      setStatus("Thank you! Your message has been sent. I will get back to you soon.", true);
+      form.reset();
+      try { localStorage.setItem("lastMessageAt", String(Date.now())); } catch (err) {}
+    } else {
+      setStatus("Something went wrong, so your message was not sent. Please try again, or reach me on", false, true);
+    }
   } catch (err) {
     setStatus("Network error, so your message was not sent. Please try again, or reach me on", false, true);
   }
