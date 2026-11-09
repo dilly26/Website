@@ -721,6 +721,7 @@ footer .foot-mail{font-size:.84rem;opacity:.92}
           </select>
         </div>
         <div><label for="message">Message</label><textarea id="message" name="message" placeholder="e.g. Hello Dilip, I would like to discuss a research idea. Could we connect this week?" required></textarea></div>
+        <div><label for="humanCheck" id="humanCheckLabel">Quick check</label><input id="humanCheck" name="humanCheck" type="text" inputmode="numeric" autocomplete="off" required aria-describedby="humanCheckHint"><small id="humanCheckHint" class="hint">Please answer before sending.</small></div>
         <button type="submit" class="btn btn-primary" id="sendBtn">Send message</button>
         <div id="formStatus" role="status" aria-live="polite"></div>
       </form>
@@ -954,6 +955,15 @@ const DISPOSABLE = ["mailinator.com","guerrillamail.com","guerrillamail.net","sh
 const isDisposable = d => DISPOSABLE.some(x => d === x || d.endsWith("." + x));
 
 const FORM_OPENED = Date.now();
+let checkAnswer;
+function refreshHumanCheck(){
+  const numbers=new Uint32Array(2);crypto.getRandomValues(numbers);
+  const a=2+numbers[0]%8,b=1+numbers[1]%9;checkAnswer=a+b;
+  document.getElementById('humanCheckLabel').textContent='Quick check: '+a+' + '+b+' = ?';
+  document.getElementById('humanCheck').value='';
+}
+refreshHumanCheck();
+function containsAbuse(text){return /\b(?:fuck(?:ing|er|ers)?|motherfucker|shit|bullshit|asshole|bastard|bitch)\b/i.test(String(text).normalize('NFKC'));}
 let submitting = false;
 form.addEventListener('submit', async event => {
   event.preventDefault();
@@ -967,6 +977,8 @@ form.addEventListener('submit', async event => {
   if (!name || !message || !/^[^\s@<>]+@[^\s@<>]+\.[A-Za-z]{2,}$/.test(email)) {
     setStatus('Please enter your name, a valid email and a message.', false); return;
   }
+  if (containsAbuse(name+' '+message)) { setStatus('Please use respectful language and describe your enquiry clearly.', false); return; }
+  if (!/^\d+$/.test(String(fields.get('humanCheck')||'').trim()) || Number(fields.get('humanCheck')) !== checkAnswer) { setStatus('Please answer the quick check correctly.', false); document.getElementById('humanCheck').focus(); return; }
   if (isDisposable(email.split('@')[1].toLowerCase())) { setStatus('Please use a permanent email address.', false); return; }
   if (message.length < 15) { setStatus('Please add a little more detail.', false); return; }
   if (message.length > 3000) { setStatus('Please keep your message under 3,000 characters.', false); return; }
@@ -997,8 +1009,9 @@ form.addEventListener('submit', async event => {
     const result = await response.json().catch(() => ({}));
     const outcome = contactResult(response.ok, result);
     if (outcome === 'accepted') {
-      setStatus('Thank you. Your message has been submitted.', true);
+      setStatus("Thank you for your response. Your message has been received. We'll address to your query very soon.", true);
       form.reset();
+      refreshHumanCheck();
       syncFormRecipient();
       try { localStorage.setItem('lastMessageAt', String(Date.now())); } catch {}
     } else if (outcome === 'activation') {
